@@ -1,0 +1,2 @@
+1. Added about section
+2. In comments - Made the output have commas in it( for us currencyt type)

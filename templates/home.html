@@ -1,0 +1,96 @@
+<html>
+<head><title> Rent Income Calculator</title>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-39547708-2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-39547708-2');
+</script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<link rel="stylesheet" type="text/css" href="{{url_for('static',filename='main.css')}}"
+</head>
+<!-- Navbar starts here -->
+<body>
+  <header class="site-header">
+    <nav class="navbar navbar-expand-md navbar-dark bg-primary fixed-top">
+      <div class="container">
+        <a class="navbar-brand mr-4" href="/">Rent Income Calculator</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggle" aria-controls="navbarToggle" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+          <!-- Navbar Right Side -->
+          <div class="navbar-nav">
+            <!-- <a class="nav-item nav-link" href="/About">About</a> -->
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+<!-- Navbar Ends Here -->
+<br>
+<br>
+  <br>
+  <main role="main" class="container">
+
+  {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+      {% for category, message in messages %}
+        <div class="alert alert-{{ category }}">
+          {{ message }}
+        </div>
+      {% endfor %}
+    {% endif %}
+  {% endwith %}
+  <br>
+  <div class = "content-section">
+      <form method = "POST" action = "">
+        {{ form.hidden_tag() }}
+        <fieldset class="form-group">
+          <div class="form-group">
+            {{ form.amount.label(class = "form-control-label")}}
+            {{ form.amount(class="form-control form-control-lg")}}<br>
+            {{ form.duration.label(class = "form-control-label")}}
+            {{ form.duration(class="form-control form-control-lg")}}<br>
+            {{ form.interest.label(class = "form-control-label")}}
+            {{ form.interest(class="form-control form-control-lg")}} <br>
+            <!-- {{string}}
+            {{ form.captcha(class="form-control form-control-lg")}} -->
+            <br>
+            {{ form.submit(class="btn btn-primary btn-lg btn-block")}}
+          </div>
+        </fieldset>
+      </form>
+</div>
+<!-- content section below -->
+<div class = "content-section">
+    <h2>What is Rent income calculator?</h2> <br>
+    Owning a rental property is not easy, property maintainence, rent agrements,
+    dealing with tenants, dealing with real estate agents and ofcourse figuiring
+    out if you are even making  a profit. With Rent Income Tracker we want to make
+    sure that you never have to worry about the <strong>profit</strong> section.
+    <br>
+    <br>
+    With this tool you can estimate the amount of money you will make after some
+    years given the <i>duration</i>, <i>inital rent</i> and the <i>rate of
+    interest</i> increase every year.
+
+</div>
+
+
+</main>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<footer class="fixed-bottom">
+  <nav class="navbar navbar-dark bg-dark">
+    <div class="container">
+      <a class="nav-link disabled" href="/about">© Copyright 2019 | Rent Income Calculator is a product by Tribhuj Technologies</a>
+  </nav>
+</footer>
+</body>
+</html>
