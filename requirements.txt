@@ -7,4 +7,4 @@ numpy==1.16.2
 virtualenv==16.6.0
 WTForms==2.2.1
 gunicorn==19.6.0
-babel==2.7.0
+babel==2.9.1
